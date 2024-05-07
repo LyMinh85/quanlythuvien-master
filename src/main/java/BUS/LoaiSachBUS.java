@@ -1,0 +1,30 @@
+package BUS;
+
+import DAO.LoaiSachDAO;
+import DAO.TacGiaDAO;
+import DTO.LoaiSachDTO;
+import DTO.TacGiaDTO;
+
+import java.util.ArrayList;
+
+public class LoaiSachBUS {
+    private ArrayList<LoaiSachDTO> listLoaiSach;
+    private LoaiSachDAO loaiSachDAO;
+
+    public LoaiSachBUS() {
+        loaiSachDAO = new LoaiSachDAO();
+        listLoaiSach = new ArrayList<>();
+    }
+
+    public ArrayList<LoaiSachDTO> getListLoaiSach() {
+        return listLoaiSach;
+    }
+
+    public void findAll() {
+        listLoaiSach = loaiSachDAO.findAll();
+    }
+
+    public LoaiSachDTO findOne(int id) {
+        return loaiSachDAO.findOne(id);
+    }
+}
